@@ -1,0 +1,752 @@
+header {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+header .overlay {
+    background: linear-gradient(to right, rgba(41, 153, 155, 0.8) 0%, rgba(167, 173, 44, 0.8) 100%);
+    /*linear-gradientالتابع ياخذ 3وسطاء/معاملات:
+       1-اتجاه التدرج من اليسار لليمين
+       2-نضع اللون الذي باليسار
+       3-اللون الذي باليمين;*/
+    height: 100vh;
+}
+
+@font-face {
+    font-family: ar-font;
+    src: url(../font/Cairo-Regular.ttf);
+}
+
+body {
+    font-family: ar-font;
+    direction: rtl;
+    position: relative;
+    text-align: right;
+    margin-top: -25px;
+}
+
+/* إزالة الحاشية من جهة اليمين والتي يفرضها البوتستراب على القوائم */
+
+nav.navbar ul.navbar-nav {
+    padding-right: 0;
+}
+
+/* التنسيقات الخاصة بالعناصر الموجودة في القائمة */
+
+nav.navbar ul.navbar-nav li a.nav-link {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 40px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* التنسيقات التي تظهر عند مرور مؤشر الفأرة على أحد عناصر القائمة */
+
+nav.navbar ul.navbar-nav li a.nav-link:hover, nav.navbar ul.navbar-nav li a.nav-link.active {
+    color: #16aeca;
+    background-color: #ffffff;
+}
+
+/* تغير ترتيب الطبقات لتصبح قائمة التنقل أعلى طبقة في الصفحة */
+
+nav.navbar {
+    text-align: right;
+    z-index: 20;
+}
+
+/* تصغير حجم شعار الصفحة */
+
+nav.navbar .navbar-brand img {
+    width: 80%;
+}
+
+nav.navbar.noTransparent ul li a.nav-link {
+    color: #16aeca;
+}
+
+nav.navbar.noTransparent ul li a.nav-link:hover, nav.navbar.noTransparent ul li a.nav-link.active {
+    color: #ffffff;
+    background-color: #16aeca;
+}
+
+nav.navbar.noTransparent .navbar-brand img {
+    width: 65%;
+}
+
+nav.navbar.noTransparent {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+
+nav.navbar button.navbar-toggler {
+    margin: 30px auto;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+nav.navbar button.navbar-toggler span {
+    color: #ffffff;
+}
+
+nav.navbar.noTransparent button.navbar-toggler span {
+    color: #16aeca;
+}
+
+.slider .carousel-inner .carousel-item {
+    min-height: 100vh;
+    opacity: 0;
+    /*اخفاء محتويات الشريحةوذلك لاظهار محتويات الشريحةالفعالة حاليا فقط*/
+}
+
+/* active إزالة الشفافية عن الشريحة الفعالة */
+
+.slider .carousel-inner .carousel-item.active {
+    opacity: 1;
+}
+
+.slider .carousel-inner .carousel-item.active .carousael-caption {
+    opacity: 1;
+    /*تظهر محتويات الشريحة الفعالةفقط*/
+}
+
+/* تحريك العنوان إلى الأعلى */
+
+.slider .carousel-inner .carousel-caption {
+    bottom: 30%;
+}
+
+/* التنسيقات المطبقة على العنوان */
+
+.slider .carousel-inner .carousel-caption h3 {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.slider .carousel-inner .carousel-caption a {
+    font-size: 18px;
+    line-height: 50px;
+    background-color: #16aeca;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 0px 2rem;
+    margin-top: 30px;
+    display: inline-block;
+    /* حتى يظهر الرابط بحجم  يساوي المجتويات  التي بداخله بالاضافة  للحشوة */
+    transform: translateY(50px);
+    /*حتى نرفعه لاعلى وعندما يكون فعال يظهر بشكل كانه يصعد لاعلى */
+    transition: all 1s ease;
+    /*لجعل الحركة تحدث بشكل سلسل*/
+}
+
+.slider .carousel-inner .carousel-item.active a {
+    transform: translateY(0px);
+}
+
+.slider .carousel-inner .carousel-item h3 {
+    transform: translateY(-50px);
+    transition: all 1s ease;
+}
+
+.slider .carousel-inner .carousel-item.active h3 {
+    transform: translateY(0px);
+}
+
+/* التنسيقات المطبقة عند مرور مؤشر الفأرة فوق الزر */
+
+.slider .carousel-inner .carousel-caption a:hover {
+    text-decoration: none;
+    background-color: #dae413;
+    color: #555555;
+}
+
+.slider .carousel-control-prev i, .slider .carousel-control-next i {
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    padding: 30px 20px;
+}
+
+.slider .carousel-control-prev {
+    left: 20px;
+}
+
+.slider .carousel-control-next {
+    right: 20px;
+}
+
+section.services {
+    padding: 80px 0;
+}
+
+section.services .title h2 {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+section.services .title {
+    margin-bottom: 50px;
+}
+
+/* تطبيق تنسيقات الخلفية وضبط الهامش لصنف البطاقات */
+
+section.services .card {
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 250px;
+    transition: all 1s ease-in-out;
+    /*حتى يزداد طولها بشكل تدريجي عند مرور موشر الفارة*/
+}
+
+/* التنسيقات المطبقة على خط العنوان داخل البطاقات */
+
+section.services .card .card-block h4 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #070c0c;
+}
+
+section.services .card img {
+    width: 140px;
+    margin: 10px auto;
+}
+
+/* تنسيق الخط للفقرة النصية داخل البطاقات وجعلها غير مرئية */
+
+section.services .card .card-block p {
+    font-size: 15px;
+    line-height: 20px;
+    color: #919191;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+/* زيادة إطار البطاقات عند مرور مؤشر الفأرة وجعل الفقرة النصية مرئية */
+
+section.services .card:hover {
+    height: 350px;
+}
+
+section.services .card:hover .card-block p {
+    opacity: 1;
+}
+
+/* تطبيق التغييرات على البطاقات بشكل متدرج 
+
+section.services .card:hover {
+    transition: height 0.5s ease-in-out;
+}
+
+section.services .card:hover .card-block p {
+    transition: opacity 1s ease-in-out;
+} */
+
+* التنسيقات المطبقة على الخط في العنوان */ section.gallery .title h2 {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+section.gallery .container {
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+section.gallery .title {
+    margin-bottom: 50px;
+}
+
+section.gallery .work-gallery a {
+    position: relative;
+    display: inline-block;
+    /*لياخذ حجم المحتويات التى بداخله*/
+    cursor: pointer;
+    width: 100%;
+    /*-ليصبح عرض هذا العنصر مساوى للآب-*/
+}
+
+/* لجعل عرض الصورة مساوى للآب
+section.gallery .work-gallery a img{
+    width: 100%;
+  }*/
+
+.work-gallery a .hover {
+    background-color: rgba(22, 174, 202, 0.9);
+    color: #ffffff;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    opacity: 0;
+    /*to hide it*/
+    transition: all 0.5s ease;
+}
+
+.work-gallery a:hover .hover {
+    opacity: 1;
+    /*to show it*/
+}
+
+.work-gallery .hover i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
+
+/* تنسيق الصفحة السوداء (صفحة الأعمال) وتحديد موضعها أمام كل الصفحات */
+
+.work-gallery .overlay-gallery {
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    right: 0px;
+    top: 0px;
+    z-index: 30;
+    /*-حتى تظهر فوق شريط التنقل-*/
+    text-align: right;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5% 10%;
+    /*لتصغير وابعاد محتواها  من الحافة*/
+    opacity: 0;
+    transition: all 1s ease;
+    margin-top: -100vh;
+    /* to animate it and make it flowing down during its show*/
+}
+
+/* إخفاء طبقة الأعمال وظهورها عند النقر عليها */
+
+section.gallery .work-gallery .overlay-gallery:target {
+    opacity: 1;
+    bottom: 0px;
+    left: 0px;
+    margin-top: 0;
+}
+
+.work-gallery .overlay-gallery img {
+    width: 100%;
+    /*لتاخذ عرض الحاوية  التي  تحويها*/
+}
+
+.work-gallery .overlay-gallery .gallery-text {
+    margin-top: 40px;
+}
+
+/* التنسيقات الخاصة في العنوان داخل الطبقة */
+
+.work-gallery .overlay-gallery h3 {
+    font-size: 36px;
+    line-height: 52px;
+    color: #16aeca;
+    margin-bottom: 30px;
+}
+
+/* تنسيقات قائمة الروابط وإضافة خط في أعلى الفقرة */
+
+.work-gallery .overlay-gallery ul {
+    padding-right: 0;
+    /*ازاله حشوة  بوستراب*/
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* (تنسيقات عناصر القائمة (الأيقونة والروابط التشعبية */
+
+.work-gallery .overlay-gallery ul a {
+    color: #555555;
+}
+
+/* التنسيقات المطبقة على الخط في الفقرة النصية داخل الطبقة */
+
+.work-gallery .overlay-gallery p {
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 40px;
+    color: #919191;
+}
+
+/* التنسيقات الخاصة بزر زيارة المشروع */
+
+.work-gallery .overlay-gallery a.visit {
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 25px;
+    padding: 0px 30px;
+    background-color: #16aeca;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    Width: auto;
+}
+
+/* تنسيقات زر زيارة المشروع عند مرور مؤشر الفأرة فوقه */
+
+.work-gallery .overlay-gallery a.visit:hover {
+    text-decoration: none;
+    background-color: #dae413;
+}
+
+/* التنسيقات المطبقة على أيقونة الإغلاق */
+
+.work-gallery .overlay-gallery a.close {
+    z-index: 30;
+    color: #16aeca;
+    position: absolute;
+    top: 2%;
+    left: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.work-gallery .overlay-gallery:target img, .work-gallery .overlay-gallery:target a.close {
+    opacity: 1;
+    max-width: 100%;
+}
+
+section.statistics {
+    background-image: url(../img/bg2.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    /*لتبقى الخلفية ثابتة عند الصعود لاعلى  او  الهبوط لاسفل  بالصفحة*/
+}
+
+section.statistics .overlay {
+    background-color: rgba(22, 174, 202, 0.8);
+    padding: 100px 0;
+}
+
+section.statistics .stat p {
+    font-size: 18px;
+    color: #85ecff;
+    line-height: 22px;
+}
+
+section.statistics .count {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: bold;
+    color: #ddfaff;
+}
+
+section.contacts {
+    padding-top: 100px;
+    background-color: #ffffff;
+}
+
+section.contacts h3 {
+    font-size: 24px;
+    line-height: 50px;
+    color: #181c1c;
+    font-weight: bold;
+}
+
+/* إلغاء الحاشية الزائدة التي يتم إضافتها بشكل تلقائي */
+
+section.contacts .info ul {
+    padding: 0;
+}
+
+/* التنسيقات الخاصة بالعناصر الفرعية للقائمة */
+
+section.contacts .info ul li {
+    font-size: 18px;
+    line-height: 25px;
+    color: #16aeca;
+    margin-bottom: 15px;
+}
+
+/* ضابط الهامش الخاص بعناصر القوائم */
+
+section.contacts .info ul li i {
+    margin-left: 6px;
+}
+
+section.contacts .form h3 {
+    margin: 50px auto 20px;
+}
+
+/* التنسيقات الخاصة بحقول الإدخال */
+
+section.contacts form input, section.contacts form textarea {
+    background-color: #f7f7f7;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    color: #5c5c5c;
+    font-family: ar-font;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+/* تنسيقات زر الإرسال */
+
+section.contacts .form form button {
+    background-color: #16aeca;
+    border: 0px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: ar-font;
+    font-size: 15px;
+    line-height: 25px;
+    padding: 10px 25px;
+    margin-right: 15px;
+}
+
+/* تصغير نموذج الإرسال وتعيين موضعه في وسط الصفحة */
+
+section.contacts .cmxform {
+    width: 60%;
+    margin: 0 auto 50px;
+}
+
+/* ظهور رسالة التحذير باللون الأحمر 
+error الصنف الذي يتم اضافته بشكل تلقائي من قبل جيكوري فاليديت*/
+
+section.contacts .form form .error {
+    color: red;
+}
+
+section.contacts #count {
+    font-size: 16px;
+    color: #16aeca;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* تنسيق اللون على خلفية تذييل الصفحة وضبط الحاشية الخاصة بها */
+
+footer .top-footer {
+    background-color: #171717;
+    padding: 75px 0;
+    text-align: right;
+}
+
+/* تنسيقات الخط المستخدم في العنوان */
+
+.top-footer h3 {
+    font-size: 18px;
+    line-height: 45px;
+    color: #85ecff;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* إضافة خط صغير أسفل العنوان */
+
+.top-footer h3:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #5c5c5c;
+}
+
+/* تنسيقات الفقرة النصية */
+
+.top-footer p {
+    font-size: 15px;
+    line-height: 22px;
+    color: #919191;
+    margin-bottom: 50px;
+}
+
+/* إزالة الحاشية الافتراضية للقوائم */
+
+.top-footer ul {
+    padding: 0;
+}
+
+/* التنسيقات المطبقة على ازرار التواصل الاجتماعي */
+
+ul.social li a i {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #333333;
+    color: #acacac;
+    transition: all 0.3s ease;
+}
+
+/* ضبط الحاشية الخاصة بأيقونات التواصل الإجتماعي */
+
+ul.social li {
+    margin-right: 5px;
+}
+
+/* تغير لون الأيقونات عند المرور فوقها بمؤشر الفأرة */
+
+ul.social li a.facebook:hover i {
+    background-color: #3b5999;
+}
+
+ul.social li a.pinterest:hover i {
+    background-color: #d48787;
+}
+
+ul.social li a.google:hover i {
+    background-color: #d34949;
+}
+
+ul.social li a.twitter:hover i {
+    background-color: #a2f7f7;
+}
+
+ul.social li a.linkedin:hover i {
+    background-color: #879fd4;
+}
+
+/* التنسيقات الخاصة بعناصر القائمة */
+
+ul.contact-us li {
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: #676767;
+}
+
+/* ضبط الهامش الخاص بالعنصر الأخير في القائمة :لاداعي لوجود هامش من الاسفل*/
+
+ul.contact-us li:last-of-type {
+    margin-bottom: 0;
+}
+
+/* التنسيقات المطبقة على الأيقونات */
+
+ul.contact-us li i {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #333333;
+    color: #acacac;
+    margin-left: 20px;
+}
+
+/* ضبط لون الخلفية الخاص بأسفل الصفحة */
+
+footer .copyright {
+    background-color: #111111;
+}
+
+/* تنسيقات الفقرة النصية في الجزء السفلي من تذييل الصفحة */
+
+footer .copyright p {
+    font-size: 15px;
+    line-height: 78px;
+    color: #919191;
+    margin-bottom: 0;
+}
+@media(max-width: 990px){
+    nav.navbar ul.navbar-nav li a.nav-link {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    header .overlay .carousel-item .carousel-caption h3 {
+        font-size: 30px;
+    }
+    
+      header .overlay .carousel-item .carousel-caption {
+        bottom: 25%;
+    }
+}
+
+/* تنسيق قائمة التنقل فى مقاس الجوال */
+
+@media (max-width: 767px) {
+    nav.navbar .container {
+        /* ليصبح حجم الحاوى مساوي لحجم الشاشة */
+        max-width: 100%;
+        /* bootstrap لتبديل اماكن العناصر فى القائمة و لتتناسب مع النسخة الحديثة من 	
+        flex-direction: row-reverse;
+        لن   احتاجها   لاني  قمت   بوضع الايقونة بعد الشعار في شيفرة html*/
+    }
+    .navbar .navbar-toggler {
+        /* إلغاء الحدود الافتراضية الموجودة على زر القائمة*/
+        outline: none;
+        margin: 0 !important;
+    }
+    .navbar {   
+        padding: .5rem 0rem;
+    }
+  
+    nav.navbar .navbar-collapse {
+        background-color: teal;
+    }
+  
+    nav.navbar.noTransparent .navbar-collapse {
+        background-color: #ffffff;
+    }
+    .navbar .navbar-toggler span {
+        /* لتوسيط ايقونة زر الهاتف فى المنتصف*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav.navbar .navbar-brand img {
+        /* تصغير حجم الصورة فى مقاس الهاتف*/
+        width: 60%;
+    }
+    .overlay-gallery .gallery-text h3 {
+        font-size: 18px;
+        line-height: 36px;
+        margin-bottom: 10px;
+    }
+  
+    .overlay-gallery .gallery-text p {
+        font-size: 14px;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+  
+    .overlay-gallery .gallery-text a.visit {
+        font-size: 14px;
+        line-height: 40px;
+    }
+  
+    section.contacts .cmxform {
+        width: 100%;
+    }
+  
+}
+/* التنسيقات المطبقة على الشاشات التي عرضها أصغر من 575 بكسل */
+
+@media (max-width: 575px) {
+    .slider .carousel-item .carousel-caption {
+        left: 2%;
+        right: 2%;
+    }
+    /*نخفي السهم لعطاءمساحة اكبر للنصوص*/
+  .slider .carousel-control-prev,
+  .slider .carousel-control-next {
+    display: none;
+  }
+
+  .work-gallery .col-md > .col-sm > a {   
+    display: block !important;
+  }
+
+  .work-gallery .col-md > .col-sm > a img {  
+    width: 100%;
+  }
+
+  .work-gallery .overlay-gallery img {   
+    width: 50%;
+  }
+  .work-gallery .overlay-gallery .gallery-text{
+      margin-top: 10px;
+  }
+  .contacts .map iframe{
+      width: 100% !important;
+  }
+}
