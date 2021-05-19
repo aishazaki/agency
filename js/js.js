@@ -11,7 +11,7 @@ $(window).scroll(function () {
 $(document).ready( function () {
     $("a.scroll").on("click", function (event) {
         var hash = this.hash
-        $("html, body").animate({scrollTop: $(hash).offset().top- 150}, 800, function(){}) 
+        $("html, body").animate({scrollTop: $(hash).offset().top- 100}, 800, function(){}) 
     });
     /*hash:اي القيمة ضمن الخاصيةاتش رف 
     href الذي يحوي المعرف للفقرات بالصفحة 

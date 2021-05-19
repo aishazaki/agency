@@ -299,6 +299,9 @@ section.gallery .work-gallery a img{
     transform: translate(-50%, -50%);
     font-size: 2em;
 }
+.work-gallery a .img-fluid{
+    width: 100%;
+}
 
 /* تنسيق الصفحة السوداء (صفحة الأعمال) وتحديد موضعها أمام كل الصفحات */
 
